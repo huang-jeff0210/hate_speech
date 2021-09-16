@@ -24,21 +24,21 @@ for j in range(1,1553):
             comments = beauty_soup.find_all('div','push')
             for comment in comments:
                 try:
-                    #person = comment.find('span','f3 hl push-userid').getText()
+                    person = comment.find('span','f3 hl push-userid').getText()
                     content = comment.find('span','f3 push-content').getText().replace(':','')
                     #date = comment.find('span','push-ipdatetime').getText().replace('\n',' ')
                     #print(person,content,date)
-                    all_comments.append(content+','+'疫苗')
+                    all_comments.append(person+','+content+','+'疫苗')
                 except:
                     pass
         if j%100 == 0:
-            with open('./data/疫苗相關4.csv','a',encoding='utf-8-sig') as f:
+            with open('./data_fix/疫苗相關4.csv','a',encoding='utf-8-sig') as f:
                 for i in all_comments:
                     f.write(i.lstrip() + "\n")  
             print(f'{j}頁寫入完成')
             all_comments = []
         elif j == 1552:
-            with open('./data/疫苗相關4.csv','a',encoding='utf-8-sig') as f:
+            with open('./data_fix/疫苗相關4.csv','a',encoding='utf-8-sig') as f:
                 for i in all_comments:
                     f.write(i.lstrip() + "\n") 
             print('{j}頁寫入完成') 

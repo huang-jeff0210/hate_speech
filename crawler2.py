@@ -26,16 +26,16 @@ for j in range(1,96):
             comments = beauty_soup.find_all('div','push')
             for comment in comments:
                 try:
-                    #person = comment.find('span','f3 hl push-userid').getText()
+                    person = comment.find('span','f3 hl push-userid').getText()
                     content = comment.find('span','f3 push-content').getText().replace(':','')
                     #date = comment.find('span','push-ipdatetime').getText().replace('\n',' ')
                     #print(person,content,date)
-                    all_comments.append(content+','+k)
+                    all_comments.append(person+','+content+','+k)
                 except:
                     pass
 
 #print(all_comments)  
          
-with open('data\疫苗相關2.csv','w',encoding='utf-8-sig') as f:
+with open('data_fix\疫苗相關2.csv','w',encoding='utf-8-sig') as f:
     for i in all_comments:
         f.write(i.lstrip() + "\n")  

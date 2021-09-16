@@ -1,9 +1,9 @@
 import pandas as pd
 
 df = pd.read_csv('D:\學習彙總\python自學\PPT留言\\vaccine\data\疫苗相關all.csv',low_memory=False)
-contents = df['contents'].astype(str)
+df['contents'] = df['contents'].astype(str)
 
-df[contents] = df['contents'].str.contains('AstraZeneca|阿斯特捷利康|BioNTech|Moderna|疫苗|AZ|bnt|輝瑞|高端|莫德納',case=False)
+df = df[ df['contents'].str.contains('AstraZeneca|阿斯特捷利康|BioNTech|Moderna|疫苗|AZ|bnt|輝瑞|高端|莫德納',case=False)]
 df
 df.to_csv('D:\學習彙總\python自學\PPT留言\\vaccine\select_data\疫苗_select_new.csv',index=False)
 

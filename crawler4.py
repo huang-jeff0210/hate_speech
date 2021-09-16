@@ -32,13 +32,13 @@ for j in range(1,1553):
                 except:
                     pass
         if j%100 == 0:
-            with open('./data_fix/疫苗相關4.csv','a',encoding='utf-8-sig') as f:
+            with open('./data/疫苗相關4.csv','a',encoding='utf-8-sig') as f:
                 for i in all_comments:
                     f.write(i.lstrip() + "\n")  
             print(f'{j}頁寫入完成')
             all_comments = []
         elif j == 1552:
-            with open('./data_fix/疫苗相關4.csv','a',encoding='utf-8-sig') as f:
+            with open('./data/疫苗相關4.csv','a',encoding='utf-8-sig') as f:
                 for i in all_comments:
                     f.write(i.lstrip() + "\n") 
             print('{j}頁寫入完成') 

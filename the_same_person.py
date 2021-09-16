@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('./data_fix/疫苗相關2.csv')
+df = pd.read_csv('./data/疫苗相關2.csv')
 
 df['contents'] = df['contents'].astype('str')
 

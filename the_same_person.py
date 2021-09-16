@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('./data_fix/疫苗相關1.csv')
+df = pd.read_csv('./data_fix/疫苗相關2.csv')
 
 df['contents'] = df['contents'].astype('str')
 
@@ -18,7 +18,7 @@ for index, row in df.iterrows():
     except:
         pass
 
-df_fix.to_csv('./data_fix/疫苗相關1_fix.csv', index = False, encoding = 'utf-8-sig')
+df_fix.to_csv('./data_fix/疫苗相關2_fix.csv', index = False, encoding = 'utf-8-sig')
 
 
 

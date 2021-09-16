@@ -1,5 +1,4 @@
 import pandas as pd
-#import jieba
 
 df = pd.read_csv('D:\學習彙總\python自學\PPT留言\\vaccine\select_data\疫苗_select.csv',low_memory=False)
 contents = df['content'].astype(str)

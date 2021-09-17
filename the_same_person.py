@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('./data_fix/疫苗相關3_fix.csv')
+df = pd.read_csv('./data/疫苗相關4.csv')
 
 df['contents'] = df['contents'].astype('str')
 
@@ -16,9 +16,11 @@ for index, row in df.iterrows():
                 fix.loc[0, i] = row[i]
             df_fix = pd.concat([df_fix, fix], axis = 0)
     except:
-        pass
+        for i in row.index:
+            fix.loc[0, i] = row[i]
+        df_fix = pd.concat([df_fix, fix], axis = 0)
 
-df_fix.to_csv('./data_fix/疫苗相關3_fix.csv', index = False, encoding = 'utf-8-sig')
+df_fix.to_csv('./data_fix/疫苗相關4_fix.csv', index = False, encoding = 'utf-8-sig')
 
 
 

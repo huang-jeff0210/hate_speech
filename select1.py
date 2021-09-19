@@ -5,7 +5,7 @@ df['contents'] = df['contents'].astype(str)
 
 df = df[ df['contents'].str.contains('AstraZeneca|阿斯特捷利康|BioNTech|Moderna|疫苗|AZ|bnt|輝瑞|高端|莫德納',case=False)]
 df
-df.to_csv('D:\學習彙總\python自學\PPT留言\\vaccine\select_data\疫苗_select_new.csv',index=False)
+df.to_csv('D:\學習彙總\python自學\PPT留言\\vaccine\select_data\疫苗_select_fix.csv',index=False)
 
 
 # J_sents_annotated_ws = [jieba.lcut(sent,cut_all=False) for sent in contents]

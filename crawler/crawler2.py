@@ -36,6 +36,6 @@ for j in range(1,96):
 
 #print(all_comments)  
          
-with open('data_fix\疫苗相關2.csv','w',encoding='utf-8-sig') as f:
+with open('..\data_fix\疫苗相關2.csv','w',encoding='utf-8-sig') as f:
     for i in all_comments:
         f.write(i.lstrip() + "\n")  

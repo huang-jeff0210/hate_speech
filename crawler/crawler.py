@@ -1,5 +1,5 @@
 import requests, bs4
-
+#科興,國藥,嬌生,康希諾,聯亞
 all_comments = []
 for j in range(1,6):
     my_list = ['AstraZeneca','阿斯特捷利康','BioNTech','Moderna']#'疫苗','AZ','bnt','輝瑞','高端','莫德納'

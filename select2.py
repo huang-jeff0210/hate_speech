@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('D:\學習彙總\python自學\PPT留言\\vaccine\select_data\疫苗_select_fix.csv',low_memory=False)
+df = pd.read_csv('D:\學習彙總\python自學\PPT留言\\vaccine\select_data3\疫苗_select_fix.csv',low_memory=False)
 df
 df['contents'] = df['contents'].astype(str)
 
@@ -13,15 +13,15 @@ df
 
 ###分成討論國內與國外疫苗###
 ###國內
-df1 = df[ df['contents'].str.contains('國產|高端|聯亞',case=False)]
+df1 = df[ df['contents'].str.contains('國產疫苗|高端|聯亞',case=False)]
 df1 = df1[df1['contents'].str.len()>10]
 df1 = df1[~ df1['contents'].str.contains('http|png|jpg',case=False)]
 df1
-df1.to_csv('D:\學習彙總\python自學\PPT留言\\vaccine\select_data\國內疫苗_select.csv',index=False)
+df1.to_csv('D:\學習彙總\python自學\PPT留言\\vaccine\select_data3\國內疫苗_select.csv',index=False)
 ###國外
-df2 = df[ df['contents'].str.contains('AstraZeneca|阿斯特捷利康|BioNTech|Moderna|AZ|bnt|輝瑞|莫德納',case=False)]
+df2 = df[ df['contents'].str.contains('科興|國藥|嬌生|康希諾|AstraZeneca|阿斯特捷利康|BioNTech|Moderna|AZ|bnt|輝瑞|莫德納',case=False)]
 df2 = df2[df2['contents'].str.len()>10]
 df2 = df2[~ df2['contents'].str.contains('http|png|jpg',case=False)]
 df2
-df2.to_csv('D:\學習彙總\python自學\PPT留言\\vaccine\select_data\國外疫苗_select.csv',index=False)
+df2.to_csv('D:\學習彙總\python自學\PPT留言\\vaccine\select_data3\國外疫苗_select.csv',index=False)
 

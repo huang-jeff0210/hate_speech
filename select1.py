@@ -1,11 +1,11 @@
 import pandas as pd
 
-df = pd.read_csv('D:\學習彙總\python自學\PPT留言\\vaccine\data\疫苗相關all_out.csv',low_memory=False)
+df = pd.read_csv('D:\學習彙總\python自學\PPT留言\\vaccine\data\疫苗相關all_out2.csv',low_memory=False)
 df['contents'] = df['contents'].astype(str)
 
 df = df[ df['contents'].str.contains('科興|國藥|嬌生|康希諾|聯亞|AstraZeneca|阿斯特捷利康|BioNTech|Moderna|疫苗|AZ|bnt|輝瑞|高端|莫德納',case=False)]
 df
-df.to_csv('D:\學習彙總\python自學\PPT留言\\vaccine\select_data3\疫苗_select_fix.csv',index=False)
+df.to_csv('D:\學習彙總\python自學\PPT留言\\vaccine\select_data5\疫苗_select_fix.csv',index=False)
 
 
 # J_sents_annotated_ws = [jieba.lcut(sent,cut_all=False) for sent in contents]

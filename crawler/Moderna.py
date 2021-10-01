@@ -15,7 +15,7 @@ for j in range(1,6):
             href = countpost[i].find('a')['href']
         except:
             pass
-        print(f"目前網址 : {url+href}")
+        #print(f"目前網址 : {url+href}")
 
         beauty_html = requests.get(url+href,cookies={'over18':'1'})
         beauty_soup = bs4.BeautifulSoup(beauty_html.text,'lxml')

@@ -32,9 +32,15 @@ for j in range(1,6):
                 all_comments.append(href+','+person+','+content+','+k+','+date)
             except:
                 pass
-
-#print(all_comments)  
-         
-with open('..\data\高端.csv','w',encoding='utf-8-sig') as f:
-    for i in all_comments:
-        f.write(i.lstrip() + "\n")  
+    if j%50 == 0:
+        with open('../data/高端.csv','a',encoding='utf-8-sig') as f:
+            for i in all_comments:
+                f.write(i.lstrip() + "\n")  
+        print(f'{j}頁寫入完成')
+        all_comments = []
+    elif j == 1552:
+        with open('../data/高端.csv','a',encoding='utf-8-sig') as f:
+            for i in all_comments:
+                f.write(i.lstrip() + "\n") 
+        print('{j}頁寫入完成') 
+        all_comments = []

@@ -26,7 +26,7 @@ for j in range(1,12):
         for comment in comments:
             try:
                 person = comment.find('span','f3 hl push-userid').getText()
-                content = comment.find('span','f3 push-content').getText().replace(':','')
+                content = comment.find('span','f3 push-content').getText().replace(':','').replace(',','，')
                 date = comment.find('span','push-ipdatetime').getText().replace('\n',' ')
                 #print(person,content,date)
                 all_comments.append(href+','+person+','+content+','+k+','+date)

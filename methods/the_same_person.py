@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('../data/高端.csv', names = ['href', 'id', 'contents', 'key', 'date'], error_bad_lines = False)
+df = pd.read_csv('../data/bnt.csv', names = ['href', 'id', 'contents', 'key', 'date'])
 
 df['contents'] = df['contents'].astype('str')
 
@@ -23,7 +23,7 @@ for index, row in df.iterrows():
 df_fix['contents_order'] = df_fix['contents'].groupby(df_fix['href']).transform(lambda x: range(1, len(x)+1))
 print(df_fix['contents_order'])
 
-df_fix.to_csv('../data_fix/高端_fix.csv', index = False, encoding = 'utf-8-sig')
+df_fix.to_csv('../data_fix/bnt_fix.csv', index = False, encoding = 'utf-8-sig')
 
 
 

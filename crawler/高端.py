@@ -1,7 +1,7 @@
 import requests, bs4
 #'AstraZeneca' 科興,國藥,嬌生,康希諾,聯亞'阿斯特捷利康','BioNTech','Moderna' #'疫苗','AZ','bnt','輝瑞','高端','莫德納',
 all_comments = []
-for j in range(1,6):
+for j in range(1, 452):
     k = '高端'
     url = 'https://www.ptt.cc'
     page = f'/bbs/Gossiping/search?page={j}&q={k}'
@@ -15,7 +15,7 @@ for j in range(1,6):
             href = countpost[i].find('a')['href']
         except:
             pass
-        print(f"目前網址 : {url+href}")
+        # print(f"目前網址 : {url+href}")
 
         beauty_html = requests.get(url+href,cookies={'over18':'1'})
         beauty_soup = bs4.BeautifulSoup(beauty_html.text,'lxml')
@@ -38,9 +38,9 @@ for j in range(1,6):
                 f.write(i.lstrip() + "\n")  
         print(f'{j}頁寫入完成')
         all_comments = []
-    elif j == 1552:
+    elif j == 451:
         with open('../data/高端.csv','a',encoding='utf-8-sig') as f:
             for i in all_comments:
                 f.write(i.lstrip() + "\n") 
-        print('{j}頁寫入完成') 
+        print(f'{j}頁寫入完成') 
         all_comments = []

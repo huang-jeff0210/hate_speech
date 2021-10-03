@@ -1,10 +1,6 @@
 import pandas as pd
 
-<<<<<<< HEAD
 df = pd.read_csv('../data/AZ.csv', names = ['href', 'id', 'contents', 'key', 'date'], low_memory=False)
-=======
-df = pd.read_csv('../data/bnt.csv', names = ['href', 'id', 'contents', 'key', 'date'])
->>>>>>> tomato_fix_data
 
 df['contents'] = df['contents'].astype('str')
 

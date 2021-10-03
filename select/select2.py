@@ -16,5 +16,5 @@ df
 df2 = df[ df['contents'].str.contains('高端|聯亞|科興|國藥|嬌生|康希諾|AstraZeneca|阿斯特捷利康|BioNTech|Moderna|AZ|bnt|輝瑞|莫德納',case=False)]
 df2 = df2[~ df2['contents'].str.contains('http|png|jpg',case=False)]
 df2
-df2.to_csv('output\國內外疫苗_select.csv',index=False)
+df2.to_csv('output\國內外疫苗_select.csv',index=False,encoding='utf-8-sig')
 

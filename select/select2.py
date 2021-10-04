@@ -4,7 +4,7 @@ df = pd.read_csv('output\疫苗_select1.csv',low_memory=False)
 df
 df['contents'] = df['contents'].astype(str)
 
-df = df[~ df['contents'].str.contains('對岸|中共|聖蟑士|柯文哲|柯P|阿北|小英|蔡英文|二毛|五毛|支那|共匪|小粉紅|吱吱|時代力量|菸粉|1450|側翼|中共|黨|KMT|DPP|綠共|綠狗|塔綠班|藍|綠|白|4%|四趴',case=False)]
+df = df[~ df['contents'].str.contains('舔共|對岸|中共|聖蟑士|柯文哲|柯P|阿北|小英|蔡英文|二毛|五毛|支那|共匪|小粉紅|吱吱|時代力量|菸粉|1450|側翼|中共|黨|KMT|DPP|綠共|綠狗|塔綠班|藍|綠|白|4%|四趴',case=False)]
 df
 
 # df = df[(df['contents'].str.len()>10) & (df['contents'].str.len()<25)]
